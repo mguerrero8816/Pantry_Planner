@@ -1,0 +1,1 @@
+json.array! @item_names, partial: 'item_names/item_name', as: :item_name

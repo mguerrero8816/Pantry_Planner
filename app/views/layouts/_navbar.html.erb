@@ -1,0 +1,23 @@
+<div class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header"><a class="navbar-brand" href="/"><span class="green">Pantry Planner</span></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse navbar-menubuilder">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to('Sign In', new_user_session_path)  %>
+            </li>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

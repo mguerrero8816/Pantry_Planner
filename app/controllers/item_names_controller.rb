@@ -7,6 +7,10 @@ class ItemNamesController < ApplicationController
     @item_names = ItemName.all
   end
 
+  def personal_index
+    @item_names = ItemName.where(user: current_user)
+  end
+
   # GET /item_names/1
   # GET /item_names/1.json
   def show
@@ -69,6 +73,6 @@ class ItemNamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_name_params
-      params.require(:item_name).permit(:name)
+      params.require(:item_name).permit(:name, :user_id)
     end
 end

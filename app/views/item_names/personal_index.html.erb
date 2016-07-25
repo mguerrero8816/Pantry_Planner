@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Item Names</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item_names.each do |item_name| %>
+      <tr>
+        <td><%= link_to item_name.name, item_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_name_path %>

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :item_names
   root 'navigation#index'
-
   devise_for :users
+  resources :item_names
+
+  get '/my_items' => 'item_names#personal_index'
+  get '/all_items' => 'item_names#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

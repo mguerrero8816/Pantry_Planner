@@ -5,5 +5,9 @@
   <%= @item_name.name %>
 </p>
 
-<%= link_to 'Edit', edit_item_name_path(@item_name) %> |
-<%= link_to 'Back', item_names_path %>
+<p>
+  <strong>User:</strong>
+  <%= @item_name.user %>
+</p>
+
+<%= link_to 'Edit Name', edit_item_name_path(@item_name) %> |         <td><%= link_to 'Delete', @item_name, method: :delete, data: { confirm: 'Are you sure?' } %></td> | <%= link_to 'Back', item_names_path %>

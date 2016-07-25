@@ -23,6 +23,13 @@ module TestingMethods
     fill_in 'user[password]', with: '123456'
     click_button 'Sign In'
   end
+
+  def generate_item(name)
+    new_item = ItemName.new
+    new_item.name = name
+    new_item.save!
+    new_item.id
+  end
 end
 
 RSpec.configure do |c|

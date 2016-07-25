@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @item_names.each do |item_name| %>
       <tr>
         <td><%= item_name.name %></td>
+        <td><%= item_name.user %></td>
         <td><%= link_to 'Show', item_name %></td>
         <td><%= link_to 'Edit', edit_item_name_path(item_name) %></td>
         <td><%= link_to 'Destroy', item_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
